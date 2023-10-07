@@ -1,0 +1,242 @@
+{
+  "name": "$ipv4subnet_synchro_name$ - $ms_tenantid_short$",
+  "description": "Discovery of IPv4 Subnets by Azure collector",
+  "status": "$synchro_status$",
+  "user_id": "$synchro_user$",
+  "notify_contact_id": "$contact_to_notify$",
+  "scope_class": "IPv4Subnet",
+  "database_table_name": "synchro_data_ipv4subnet_$ms_tenantid_short$",
+  "scope_restriction": "",
+  "full_load_periodicity": "$full_load_interval$",
+  "reconciliation_policy": "use_attributes",
+  "action_on_zero": "create",
+  "action_on_one": "update",
+  "action_on_multiple": "error",
+  "delete_policy": "ignore",
+  "delete_policy_update": "",
+  "delete_policy_retention": "0",
+  "attribute_list": [
+    {
+      "attcode": "alarm_water_mark",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "allocation_date",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "azuresubnet_id",
+      "update": "1",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "reconciliation_attcode": "azureid",
+      "finalclass": "SynchroAttExtKey"
+    },
+    {
+      "attcode": "block_id",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "reconciliation_attcode": "",
+      "finalclass": "SynchroAttExtKey"
+    },
+    {
+      "attcode": "broadcastip",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "comment",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "contact_list",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "row_separator": "|",
+      "attribute_separator": ";",
+      "value_separator": ":",
+      "attribute_qualifier": "'",
+      "finalclass": "SynchroAttLinkSet"
+    },
+    {
+      "attcode": "document_list",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "row_separator": "|",
+      "attribute_separator": ";",
+      "value_separator": ":",
+      "attribute_qualifier": "'",
+      "finalclass": "SynchroAttLinkSet"
+    },
+    {
+      "attcode": "gatewayip",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "ip",
+      "update": "1",
+      "reconcile": "1",
+      "update_policy": "master_locked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "ip_occupancy",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "ipconfig_id",
+      "update": "1",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "reconciliation_attcode": "",
+      "finalclass": "SynchroAttExtKey"
+    },
+    {
+      "attcode": "ipv4_gateway_ip_format",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "location_list",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "row_separator": "|",
+      "attribute_separator": ";",
+      "value_separator": ":",
+      "attribute_qualifier": "'",
+      "finalclass": "SynchroAttLinkSet"
+    },
+    {
+      "attcode": "mask",
+      "update": "1",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "name",
+      "update": "1",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "org_id",
+      "update": "1",
+      "reconcile": "1",
+      "update_policy": "master_locked",
+      "reconciliation_attcode": "name",
+      "finalclass": "SynchroAttExtKey"
+    },
+    {
+      "attcode": "range_occupancy",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "release_date",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "requestor_id",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "reconciliation_attcode": "",
+      "finalclass": "SynchroAttExtKey"
+    },
+    {
+      "attcode": "reserve_subnet_ips",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "status",
+      "update": "1",
+      "reconcile": "0",
+      "update_policy": "master_unlocked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "subnets_list",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "row_separator": "|",
+      "attribute_separator": ";",
+      "value_separator": ":",
+      "attribute_qualifier": "'",
+      "finalclass": "SynchroAttLinkSet"
+    },
+    {
+      "attcode": "type",
+      "update": "1",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "vlans_list",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "row_separator": "|",
+      "attribute_separator": ";",
+      "value_separator": ":",
+      "attribute_qualifier": "'",
+      "finalclass": "SynchroAttLinkSet"
+    },
+    {
+      "attcode": "vrfs_list",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "row_separator": "|",
+      "attribute_separator": ";",
+      "value_separator": ":",
+      "attribute_qualifier": "'",
+      "finalclass": "SynchroAttLinkSet"
+    },
+    {
+      "attcode": "write_reason",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "finalclass": "SynchroAttribute"
+    }
+  ],
+  "user_delete_policy": "administrators",
+  "url_icon": "",
+  "url_application": "",
+  "notify_contact_id_obsolescence_flag": ""
+}

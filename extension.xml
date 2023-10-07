@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension format="1.0">
+	<extension_code>combodo-azure-data-collector</extension_code>
+	<company>Combodo SARL</company>
+	<author><![CDATA[Christophe]]></author>
+	<label><![CDATA[Data collector for Microsoft Azure]]></label>
+	<description><![CDATA[Synchronization of Azure objects]]></description>
+	<version>2.0.0</version>
+	<modules type="array">
+		<module>
+			<id>itop-data-collector-base</id>
+			<version>tags/1.3.0</version>
+		</module>
+		<module>
+			<id>itop-data-collector-ms-azure</id>
+			<version>tags/2.0.0</version>
+		</module>
+		<module>
+			<id>itop-data-collector-ms-base</id>
+			<version>tags/2.0.0</version>
+		</module>
+	</modules>
+	<release_date>2023-04-14</release_date>
+	<version_description><![CDATA[
+	* Adapt to DM enhancements, allow and handle presence of TeemIp
+	* N°5067 - Cleanup RestClient::GetFullSynchroDataSource() (thanks to @Hipska)
+	* N°5139 - Let data that is null also be null at the other side (thanks to @Hipska)
+	* N°5600 - Create enhanced collector::CheckColumns method and factorize JSON, CSV and SQL equivalent methods to it
+	* Make AttributeIsNullified work with JSON collector
+	* N°5707 - Contact to notify can also be a Team (thanks to @Hipska)
+	* N°5709 - Fix warning when aSkippedAttributes is not correctly populated (thanks to @Hipska)
+	* N°5710 - Restructure collector and introduce collection plan
+	* N°5738 - integrate SaaS collector enhancements
+	* N°5821 - JenkinsFile : introduce buildDiscarder
+	* N°5868 - Add PHP 8.0 / 8.1 compatibility
+	* N°5884 - Missing attributes in aSkippedAttribute
+	* N°5902 - Handle smoothly empty or header-only CSV source filesby CSV collector
+	* N°5950 - cleanup code and fix some futurs bugs in php 8.2
+	* N°5979 - Remove PHP warning and hide test data collectors in iTop setup
+	* N°5995 - Fix PHP warning on lookup when table is empty
+	* N°5996 - During creation of csv file, in function lookup remove warning if initial field is empty
+	* N°6012 - Add support for authentication via tokens to reach iTop (authent-token module)
+	* N°5749 - Lack of feedback in case of synchro
+	* N°6095 - Don't update data source if field exists only in iTop
+      ]]></version_description>
+	<itop_version_min></itop_version_min>
+	<status></status>
+	<mandatory>false</mandatory>
+	<more_info_url></more_info_url>
+</extension>

@@ -1,0 +1,1272 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Default values for parameters. Do NOT alter this file, use params.local.xml instead -->
+<parameters>
+  <!-- iTop Parameters -->
+  <itop_url>http://myitop.com</itop_url>
+  <itop_login>admin</itop_login>
+  <itop_password>admin</itop_password>
+
+  <!-- Microsoft links -->
+  <microsoft_login_url>https://login.microsoftonline.com/</microsoft_login_url>
+  <microsoft_auth_mode>/oauth2/token</microsoft_auth_mode>
+  <microsoft_resource>https://management.azure.com/</microsoft_resource>
+
+  <!-- Client's credentials -->
+  <ms_clientid></ms_clientid>
+  <ms_clientsecret></ms_clientsecret>
+  <ms_tenantid></ms_tenantid>
+
+  <!-- Subscriptions -->
+  <azuresubscriptionazurecollector>
+    <ms_class>subscriptions</ms_class>
+    <api_version>2020-01-01</api_version>
+    <jsonfile>data/AzureSubscription.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureid>id</azureid>
+      <azuretenant_id>tenantId</azuretenant_id>
+      <name>displayName</name>
+      <org_id>org_id</org_id>
+      <provider_id>provider_id</provider_id>
+      <subscriptionid>subscriptionId</subscriptionid>
+      <status>state</status>
+    </fields>
+    <defaults>
+      <org_id>Demo</org_id>
+      <provider_id>Demo</provider_id>
+      <status>implementation</status>
+    </defaults>
+  </azuresubscriptionazurecollector>
+
+  <!-- App Services -->
+  <azureappserviceazurecollector>
+    <ms_class>sites</ms_class>
+    <api_version>2021-02-01</api_version>
+    <jsonfile>data/AzureAppServices.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <app_service_plan>properties/serverFarmId</app_service_plan>
+      <azureid>id</azureid>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <business_criticity>business_criticity</business_criticity>
+      <ftps_hostname>properties/ftpsHostName</ftps_hostname>
+      <location_id>location</location_id>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <provisioning_status>properties/state</provisioning_status>
+      <status>state</status>
+      <url>url</url>
+    </fields>
+    <defaults>
+      <app_service_plan></app_service_plan>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <business_criticity>medium</business_criticity>
+      <ftps_hostname></ftps_hostname>
+      <org_id>Demo</org_id>
+      <provisioning_status></provisioning_status>
+      <status>implementation</status>
+      <url></url>
+    </defaults>
+  </azureappserviceazurecollector>
+
+  <!-- Disks -->
+  <azurediskazurecollector>
+    <ms_class>disks</ms_class>
+    <api_version>2020-12-01</api_version>
+    <jsonfile>data/AzureDisk.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureid>id</azureid>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azurestatus>azurestatus</azurestatus>
+      <azuresku_id>sku/name</azuresku_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <azurevirtualmachine_id>azurevirtualmachine_id</azurevirtualmachine_id>
+      <business_criticity>business_criticity</business_criticity>
+      <encryption>encryption</encryption>
+      <location_id>location</location_id>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <osfamily_id>osfamily_id</osfamily_id>
+      <provisioning_status>properties/provisioningState</provisioning_status>
+      <size>properties/diskSizeGB</size>
+      <status>state</status>
+    </fields>
+    <defaults>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azurestatus></azurestatus>
+      <azuresku_id></azuresku_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <azurevirtualmachine_id></azurevirtualmachine_id>
+      <business_criticity>medium</business_criticity>
+      <encryption></encryption>
+      <org_id>Demo</org_id>
+      <osfamily_id></osfamily_id>
+      <provisioning_status></provisioning_status>
+      <size></size>
+      <status>implementation</status>
+    </defaults>
+  </azurediskazurecollector>
+
+  <!-- Kubernetes services -->
+  <azurekubernetesserviceazurecollector>
+    <ms_class>managedClusters</ms_class>
+    <api_version>2021-10-01</api_version>
+    <jsonfile>data/AzureKubernetesService.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureid>id</azureid>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <business_criticity>business_criticity</business_criticity>
+      <fqdn>fqdn</fqdn>
+      <loadbalancer_sku>loadbalancer_sku</loadbalancer_sku>
+      <location_id>location</location_id>
+      <max_agent_pools>max_agent_pools</max_agent_pools>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <outbound_type>outbound_type</outbound_type>
+      <provisioning_status>properties/provisioningStat</provisioning_status>
+      <status>state</status>
+      <version>properties/kubernetesVersion</version>
+    </fields>
+    <defaults>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <business_criticity>medium</business_criticity>
+      <fqdn></fqdn>
+      <loadbalancer_sku></loadbalancer_sku>
+      <max_agent_pools></max_agent_pools>
+      <org_id>Demo</org_id>
+      <outbound_type></outbound_type>
+      <provisioning_status></provisioning_status>
+      <status>implementation</status>
+      <version></version>
+    </defaults>
+  </azurekubernetesserviceazurecollector>
+
+  <!-- Load balancers -->
+  <azureloadbalancerazurecollector>
+    <ms_class>loadBalancers</ms_class>
+    <api_version>2021-05-01</api_version>
+    <jsonfile>data/AzureLoadBalancer.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureid>id</azureid>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <business_criticity>business_criticity</business_criticity>
+      <location_id>location</location_id>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <provisioning_status>properties/provisioningState</provisioning_status>
+      <sku>sku/name</sku>
+      <status>state</status>
+    </fields>
+    <defaults>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <business_criticity>medium</business_criticity>
+      <org_id>Demo</org_id>
+      <provisioning_status></provisioning_status>
+      <sku>basic</sku>
+      <status>implementation</status>
+    </defaults>
+  </azureloadbalancerazurecollector>
+
+  <!-- Load balancer frontend IP configurations -->
+  <azureloadbalancerfrontendipconfigazurecollector>
+    <ms_class>frontendIPConfigurations</ms_class>
+    <api_version>2022-01-01</api_version>
+    <jsonfile>data/AzureLoadBalancerFrontendIPConfig.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureid>id</azureid>
+      <azureloadbalancer_id>azureloadbalancer_id</azureloadbalancer_id>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubnet_id>azuresubnet_id</azuresubnet_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <business_criticity>business_criticity</business_criticity>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <primary>primary</primary>
+      <private_ip>privateIPAddress</private_ip>
+      <ip_id>ip_id</ip_id>
+      <private_ip_allocation_method>privateIPAllocationMethod</private_ip_allocation_method>
+      <private_ip_version>privateIPAddressVersion</private_ip_version>
+      <public_ip_id>publicIPAddress</public_ip_id>
+      <provisioning_status>properties/provisioningState</provisioning_status>
+      <status>state</status>
+    </fields>
+    <defaults>
+      <azureloadbalancer_id></azureloadbalancer_id>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubnet_id></azuresubnet_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <business_criticity>medium</business_criticity>
+      <org_id>Demo</org_id>
+      <private_ip></private_ip>
+      <ip_id></ip_id>
+      <private_ip_allocation_method></private_ip_allocation_method>
+      <private_ip_version></private_ip_version>
+      <provisioning_status></provisioning_status>
+      <public_ip_id></public_ip_id>
+      <status>implementation</status>
+    </defaults>
+  </azureloadbalancerfrontendipconfigazurecollector>
+
+  <!-- Locations -->
+  <azurelocationazurecollector>
+    <ms_class>location</ms_class>
+    <api_version>2021-04-01-preview</api_version>
+    <jsonfile>data/AzureLocation.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <code>code</code>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <status>state</status>
+    </fields>
+    <defaults>
+      <code></code>
+      <org_id>Demo</org_id>
+      <status>active</status>
+    </defaults>
+  </azurelocationazurecollector>
+
+  <!-- MariaDBs -->
+  <azuremariadbazurecollector>
+    <ms_class>databases</ms_class>
+    <api_version>2018-06-01-preview</api_version>
+    <jsonfile>data/AzureMariaDB.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureid>id</azureid>
+      <azuredbserver_id>azuredbserver_id</azuredbserver_id>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <business_criticity>business_criticity</business_criticity>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <status>state</status>
+    </fields>
+    <defaults>
+      <azuredbserver_id></azuredbserver_id>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <business_criticity>medium</business_criticity>
+      <org_id>Demo</org_id>
+      <status>implementation</status>
+    </defaults>
+  </azuremariadbazurecollector>
+
+  <!-- MariaDB servers -->
+  <azuremariadbserverazurecollector>
+    <ms_class>servers</ms_class>
+    <api_version>2018-06-01-preview</api_version>
+    <jsonfile>data/AzureMariaDBServer.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureid>id</azureid>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <business_criticity>business_criticity</business_criticity>
+      <capacity>sku/capacity</capacity>
+      <fqdn>properties/fullyQualifiedDomainName</fqdn>
+      <location_id>location</location_id>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <provisioning_status>properties/userVisibleState</provisioning_status>
+      <status>state</status>
+      <storage>storage</storage>
+      <tier>sku/tier</tier>
+      <type>type</type>
+      <version>properties/version</version>
+    </fields>
+    <defaults>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <business_criticity>medium</business_criticity>
+      <capacity></capacity>
+      <fqdn></fqdn>
+      <org_id>Demo</org_id>
+      <provisioning_status></provisioning_status>
+      <status>implementation</status>
+      <storage></storage>
+      <tier></tier>
+      <type>mariadb</type>
+      <version></version>
+    </defaults>
+  </azuremariadbserverazurecollector>
+
+  <!-- MSSQls -->
+  <azuremssqlazurecollector>
+    <ms_class>databases</ms_class>
+    <api_version>2021-08-01-preview</api_version>
+    <jsonfile>data/AzureMSSQL.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureid>id</azureid>
+      <azuredbserver_id>azuredbserver_id</azuredbserver_id>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <business_criticity>business_criticity</business_criticity>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <status>state</status>
+    </fields>
+    <defaults>
+      <azuredbserver_id></azuredbserver_id>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <business_criticity>medium</business_criticity>
+      <org_id>Demo</org_id>
+      <status>implementation</status>
+    </defaults>
+  </azuremssqlazurecollector>
+
+  <!-- MSSQl servers -->
+  <azuremssqlserverazurecollector>
+    <ms_class>servers</ms_class>
+    <api_version>2021-08-01-preview</api_version>
+    <jsonfile>data/AzureMSSQLServer.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureid>id</azureid>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <business_criticity>business_criticity</business_criticity>
+      <capacity>properties/replicaCapacity</capacity>
+      <fqdn>properties/fullyQualifiedDomainName</fqdn>
+      <location_id>location</location_id>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <provisioning_status>properties/state</provisioning_status>
+      <status>state</status>
+      <storage>storage</storage>
+      <tier>sku/tier</tier>
+      <type>type</type>
+      <version>properties/version</version>
+    </fields>
+    <defaults>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <business_criticity>medium</business_criticity>
+      <capacity></capacity>
+      <fqdn></fqdn>
+      <org_id>Demo</org_id>
+      <provisioning_status></provisioning_status>
+      <status>implementation</status>
+      <storage></storage>
+      <tier></tier>
+      <type>mssql</type>
+      <version></version>
+    </defaults>
+  </azuremssqlserverazurecollector>
+
+  <!-- MySQLs -->
+  <azuremysqlazurecollector>
+    <ms_class>databases</ms_class>
+    <api_version>2021-05-01</api_version>
+    <jsonfile>data/AzureMySQL.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureid>id</azureid>
+      <azuredbserver_id>azuredbserver_id</azuredbserver_id>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <business_criticity>business_criticity</business_criticity>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <status>state</status>
+    </fields>
+    <defaults>
+      <azuredbserver_id></azuredbserver_id>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <business_criticity>medium</business_criticity>
+      <org_id>Demo</org_id>
+      <status>implementation</status>
+    </defaults>
+  </azuremysqlazurecollector>
+
+  <!-- MySQl servers -->
+  <azuremysqlserverazurecollector>
+    <ms_class>servers</ms_class>
+    <api_version>2021-05-01</api_version>
+    <jsonfile>data/AzureMySQLServer.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureid>id</azureid>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <business_criticity>business_criticity</business_criticity>
+      <capacity>properties/replicaCapacity</capacity>
+      <fqdn>properties/fullyQualifiedDomainName</fqdn>
+      <location_id>location</location_id>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <provisioning_status>properties/state</provisioning_status>
+      <status>state</status>
+      <storage>storage</storage>
+      <tier>sku/tier</tier>
+      <type>type</type>
+      <version>properties/version</version>
+    </fields>
+    <defaults>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <business_criticity>medium</business_criticity>
+      <capacity></capacity>
+      <fqdn></fqdn>
+      <org_id>Demo</org_id>
+      <provisioning_status></provisioning_status>
+      <status>implementation</status>
+      <storage></storage>
+      <tier></tier>
+      <type>mysql</type>
+      <version></version>
+    </defaults>
+  </azuremysqlserverazurecollector>
+
+  <!-- Network interfaces -->
+  <azurenetworkinterfaceazurecollector>
+    <ms_class>networkInterfaces</ms_class>
+    <api_version>2022-01-01</api_version>
+    <jsonfile>data/AzureNetworkInterface.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureid>id</azureid>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <azurevirtualmachine_id>azurevirtualmachine_id</azurevirtualmachine_id>
+      <azurevnets_list>azurevnets_list</azurevnets_list>
+      <business_criticity>business_criticity</business_criticity>
+      <location_id>location</location_id>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <provisioning_status>properties/provisioningState</provisioning_status>
+      <status>state</status>
+    </fields>
+    <defaults>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <azurevirtualmachine_id></azurevirtualmachine_id>
+      <azurevnets_list></azurevnets_list>
+      <business_criticity>medium</business_criticity>
+      <org_id>Demo</org_id>
+      <provisioning_status></provisioning_status>
+      <status>implementation</status>
+    </defaults>
+  </azurenetworkinterfaceazurecollector>
+
+  <!-- Network interface IP configurations -->
+  <azurenetworkinterfaceipconfigazurecollector>
+    <ms_class>ipConfigurations</ms_class>
+    <api_version>2022-01-01</api_version>
+    <jsonfile>data/AzureNetworkInterfaceIPConfig.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureid>id</azureid>
+      <azurenetworkinterface_id>azurenetworkinterface_id</azurenetworkinterface_id>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubnet_id>azuresubnet_id</azuresubnet_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <business_criticity>business_criticity</business_criticity>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <primary>primary</primary>
+      <private_ip>private_ip</private_ip>
+      <ip_id>ip_id</ip_id>
+      <private_ip_allocation_method>private_ip_allocation_method</private_ip_allocation_method>
+      <private_ip_version>private_ip_version</private_ip_version>
+      <public_ip_id>public_ip_id</public_ip_id>
+      <provisioning_status>properties/provisioningState</provisioning_status>
+      <status>state</status>
+    </fields>
+    <defaults>
+      <azurenetworkinterface_id></azurenetworkinterface_id>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubnet_id></azuresubnet_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <business_criticity>medium</business_criticity>
+      <ip_id></ip_id>
+      <org_id>Demo</org_id>
+      <primary></primary>
+      <private_ip></private_ip>
+      <private_ip_allocation_method></private_ip_allocation_method>
+      <private_ip_version></private_ip_version>
+      <public_ip_id></public_ip_id>
+      <provisioning_status></provisioning_status>
+      <status>implementation</status>
+    </defaults>
+  </azurenetworkinterfaceipconfigazurecollector>
+
+  <!-- PostgreSQL -->
+  <azurepostgreazurecollector>
+    <ms_class>databases</ms_class>
+    <api_version>2020-11-05-preview</api_version>
+    <jsonfile>data/AzurePostgre.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureid>id</azureid>
+      <azuredbserver_id>azuredbserver_id</azuredbserver_id>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <business_criticity>business_criticity</business_criticity>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <status>state</status>
+    </fields>
+    <defaults>
+      <azuredbserver_id></azuredbserver_id>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <business_criticity>medium</business_criticity>
+      <org_id>Demo</org_id>
+      <status>implementation</status>
+    </defaults>
+  </azurepostgreazurecollector>
+
+  <!-- PostgreSQL servers -->
+  <azurepostgreserverazurecollector>
+    <ms_class>servers</ms_class>
+    <api_version>2020-02-14-preview</api_version>
+    <jsonfile>data/AzurePostgreServer.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureid>id</azureid>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <business_criticity>business_criticity</business_criticity>
+      <capacity>capacity</capacity>
+      <fqdn>properties/fullyQualifiedDomainName</fqdn>
+      <location_id>location</location_id>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <provisioning_status>properties/state</provisioning_status>
+      <status>state</status>
+      <storage>storage</storage>
+      <tier>sku/tier</tier>
+      <type>type</type>
+      <version>properties/version</version>
+    </fields>
+    <defaults>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <business_criticity>medium</business_criticity>
+      <capacity></capacity>
+      <fqdn></fqdn>
+      <org_id>Demo</org_id>
+      <provisioning_status></provisioning_status>
+      <status>implementation</status>
+      <storage></storage>
+      <tier></tier>
+      <type>postgre</type>
+      <version></version>
+    </defaults>
+  </azurepostgreserverazurecollector>
+
+  <!-- Private Endpoint -->
+  <azureprivateendpointazurecollector>
+    <ms_class>privateEndpoints</ms_class>
+    <api_version>2022-07-01</api_version>
+    <jsonfile>data/AzurePrivateEndpoint.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <address_space>address_space</address_space>
+      <azureid>id</azureid>
+      <azurenetworkinterfaces_list>azurenetworkinterfaces_list</azurenetworkinterfaces_list>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubnet_id>properties/subnet/id</azuresubnet_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <business_criticity>business_criticity</business_criticity>
+      <location_id>location</location_id>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <provisioning_status>properties/provisioningState</provisioning_status>
+      <status>state</status>
+    </fields>
+    <defaults>
+      <azurenetworkinterfaces_list></azurenetworkinterfaces_list>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubnet_id></azuresubnet_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <business_criticity>medium</business_criticity>
+      <org_id>Demo</org_id>
+      <provisioning_status></provisioning_status>
+      <status>implementation</status>
+    </defaults>
+  </azureprivateendpointazurecollector>
+
+  <!-- Public IP addresses -->
+  <azurepublicipaddressazurecollector>
+    <ms_class>publicIPAddresses</ms_class>
+    <api_version>2022-01-01</api_version>
+    <jsonfile>data/AzurePublicIPAddress.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <allocation_method>properties/publicIPAllocationMethod</allocation_method>
+      <azureid>id</azureid>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <azurevnet_id>azurevnet_id</azurevnet_id>
+      <business_criticity>business_criticity</business_criticity>
+      <fqdn>fqdn</fqdn>
+      <ip>ip</ip>
+      <ip_id>ip_id</ip_id>
+      <azureipconfig_id>ipConfiguration</azureipconfig_id>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <provisioning_status>properties/provisioningState</provisioning_status>
+      <short_name>short_name</short_name>
+      <status>state</status>
+      <version>properties/publicIPAddressVersion</version>
+    </fields>
+    <defaults>
+      <allocation_method></allocation_method>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <business_criticity>medium</business_criticity>
+      <fqdn></fqdn>
+      <ip></ip>
+      <ip_id></ip_id>
+      <azureipconfig_id></azureipconfig_id>
+      <mask></mask>
+      <org_id>Demo</org_id>
+      <provisioning_status></provisioning_status>
+      <status>implementation</status>
+      <short_name></short_name>
+      <version></version>
+    </defaults>
+  </azurepublicipaddressazurecollector>
+
+  <!-- Resources group -->
+  <azureresourcegroupazurecollector>
+    <ms_class>resourcegroups</ms_class>
+    <api_version>2020-09-01</api_version>
+    <jsonfile>data/AzureResourceGroup.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureid>id</azureid>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <business_criticity>business_criticity</business_criticity>
+      <location_id>location</location_id>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <provisioning_status>properties/provisioningState</provisioning_status>
+    </fields>
+    <defaults>
+      <azuresubscription_id></azuresubscription_id>
+      <business_criticity>medium</business_criticity>
+      <org_id>Demo</org_id>
+      <provisioning_status></provisioning_status>
+    </defaults>
+  </azureresourcegroupazurecollector>
+
+  <!-- SKUs -->
+  <azureskuazurecollector>
+    <ms_class>skus</ms_class>
+    <api_version>2021-07-01</api_version>
+    <jsonfile>data/AzureSKU.json</jsonfile>
+    <path>value</path>
+    <location_filter>westeurope</location_filter>
+    <fields>
+      <primary_key>name</primary_key>
+      <family>family</family>
+      <maxbandwidthmbps>maxbandwidthmbps</maxbandwidthmbps>
+      <maxiops>maxnetwormaxiopskinterfaces</maxiops>
+      <maxnetworkinterfaces>maxnetworkinterfaces</maxnetworkinterfaces>
+      <maxresourcevolumemb>maxresourcevolumemb</maxresourcevolumemb>
+      <maxsizegib>maxsizegib</maxsizegib>
+      <memorygb>memorygb</memorygb>
+      <name>name</name>
+      <osvhdsizemb>osvhdsizemb</osvhdsizemb>
+      <size>size</size>
+      <tier>tier</tier>
+      <type>resourceType</type>
+      <vcpus>vcpus</vcpus>
+      <vcpuspercore>vcpuspercore</vcpuspercore>
+    </fields>
+    <defaults>
+      <family></family>
+      <maxbandwidthmbps></maxbandwidthmbps>
+      <maxiops></maxiops>
+      <maxnetworkinterfaces></maxnetworkinterfaces>
+      <maxresourcevolumemb></maxresourcevolumemb>
+      <memorygb></memorygb>
+      <maxsizegib></maxsizegib>
+      <osvhdsizemb></osvhdsizemb>
+      <size></size>
+      <tier></tier>
+      <type></type>
+      <vcpus></vcpus>
+      <vcpuspercore></vcpuspercore>
+    </defaults>
+  </azureskuazurecollector>
+
+  <!-- Storage accounts -->
+  <azurestorageaccountazurecollector>
+    <ms_class>storageAccounts</ms_class>
+    <api_version>2021-04-01</api_version>
+    <jsonfile>data/AzureStorageAccount.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureid>id</azureid>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <business_criticity>business_criticity</business_criticity>
+      <location_id>location</location_id>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <provisioning_status>properties/provisioningState</provisioning_status>
+      <status>state</status>
+      <tier>sku/tier</tier>
+    </fields>
+    <defaults>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <business_criticity>medium</business_criticity>
+      <org_id>Demo</org_id>
+      <provisioning_status></provisioning_status>
+      <status>implementation</status>
+      <tier></tier>
+    </defaults>
+  </azurestorageaccountazurecollector>
+
+  <!-- Subnets -->
+  <azuresubnetazurecollector>
+    <ms_class>subnets</ms_class>
+    <api_version>2022-01-01</api_version>
+    <jsonfile>data/AzureSubnet.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureci_id>azureci_id</azureci_id>
+      <azureid>id</azureid>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <azurevnet_id>azurevnet_id</azurevnet_id>
+      <business_criticity>business_criticity</business_criticity>
+      <ip></ip>
+      <ipsubnet_id>subnet_id</ipsubnet_id>
+      <location_id>location</location_id>
+      <mask>mask</mask>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <provisioning_status>properties/provisioningState</provisioning_status>
+      <status>state</status>
+    </fields>
+    <defaults>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <azurevnet_id></azurevnet_id>
+      <business_criticity>medium</business_criticity>
+      <ip></ip>
+      <ipsubnet_id></ipsubnet_id>
+      <mask></mask>
+      <org_id>Demo</org_id>
+      <provisioning_status></provisioning_status>
+      <status>implementation</status>
+    </defaults>
+  </azuresubnetazurecollector>
+
+  <!-- Virtual machines -->
+  <azurevirtualmachineazurecollector>
+    <ms_class>virtualMachines</ms_class>
+    <api_version>2021-11-01</api_version>
+    <jsonfile>data/AzureVirtualMachine.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureid>id</azureid>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresku_id>properties/hardwareProfile/vmSize</azuresku_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <azurevmid>properties/vmId</azurevmid>
+      <business_criticity>business_criticity</business_criticity>
+      <location_id>location</location_id>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <osfamily_id>osfamily_id</osfamily_id>
+      <osversion>osversion</osversion>
+      <provisioning_status>properties/provisioningState</provisioning_status>
+      <status>state</status>
+    </fields>
+    <defaults>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresku_id></azuresku_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <azurevmid></azurevmid>
+      <business_criticity>medium</business_criticity>
+      <org_id>Demo</org_id>
+      <osfamily_id></osfamily_id>
+      <osversion></osversion>
+      <provisioning_status></provisioning_status>
+      <status>implementation</status>
+    </defaults>
+  </azurevirtualmachineazurecollector>
+
+  <!-- VNETs -->
+  <azurevnetazurecollector>
+    <ms_class>virtualNetworks</ms_class>
+    <api_version>2022-01-01</api_version>
+    <jsonfile>data/AzureVNet.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <address_space>address_space</address_space>
+      <azureid>id</azureid>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <business_criticity>business_criticity</business_criticity>
+      <location_id>location</location_id>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <provisioning_status>properties/provisioningState</provisioning_status>
+      <status>state</status>
+    </fields>
+    <defaults>
+      <address_space></address_space>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <business_criticity>medium</business_criticity>
+      <org_id>Demo</org_id>
+      <provisioning_status></provisioning_status>
+      <status>implementation</status>
+    </defaults>
+  </azurevnetazurecollector>
+
+  <!-- VNET Gateways -->
+  <azurevnetgatewayazurecollector>
+    <ms_class>virtualNetworkGateways</ms_class>
+    <api_version>2021-03-01</api_version>
+    <jsonfile>data/AzureVNetGateway.json</jsonfile>
+    <path>value</path>
+    <fields>
+      <primary_key>id</primary_key>
+      <azureid>id</azureid>
+      <azureresourcegroup_id>azureresourcegroup_id</azureresourcegroup_id>
+      <azuresubscription_id>azuresubscription_id</azuresubscription_id>
+      <azuretags>azuretags</azuretags>
+      <business_criticity>business_criticity</business_criticity>
+      <location_id>location</location_id>
+      <name>name</name>
+      <org_id>org_id</org_id>
+      <provisioning_status>properties/provisioningState</provisioning_status>
+      <status>state</status>
+    </fields>
+    <defaults>
+      <azureresourcegroup_id></azureresourcegroup_id>
+      <azuresubscription_id></azuresubscription_id>
+      <azuretags></azuretags>
+      <business_criticity>medium</business_criticity>
+      <org_id>Demo</org_id>
+      <provisioning_status></provisioning_status>
+      <status>implementation</status>
+    </defaults>
+  </azurevnetgatewayazurecollector>
+
+  <!-- IPv4 Addresses -->
+  <ipv4addressazurecollector>
+    <csv_file>data/IPv4Address.csv</csv_file>
+    <fields>
+      <primary_key>primary_key</primary_key>
+      <ip>ip_id</ip>
+      <short_name>name</short_name>
+    </fields>
+    <defaults>
+      <azureip>yes</azureip>
+      <ipconfig_id></ipconfig_id>
+      <org_id>Demo</org_id>
+      <status>allocated</status>
+      <subnet_id></subnet_id>
+    </defaults>
+  </ipv4addressazurecollector>
+
+  <!-- IPv6 Addresses -->
+  <ipv6addressazurecollector>
+    <csv_file>data/IPv6Address.csv</csv_file>
+    <fields>
+      <primary_key>primary_key</primary_key>
+      <ip>ip_id</ip>
+      <short_name>name</short_name>
+    </fields>
+    <defaults>
+      <azureip>yes</azureip>
+      <ipconfig_id></ipconfig_id>
+      <org_id>Demo</org_id>
+      <status>allocated</status>
+      <subnet_id></subnet_id>
+    </defaults>
+  </ipv6addressazurecollector>
+
+  <!-- IPv4 Subnets -->
+  <ipv4subnetazurecollector>
+    <csv_file>data/IPv4Subnet.csv</csv_file>
+    <fields>
+      <primary_key>primary_key</primary_key>
+      <azuresubnet_id>azureid</azuresubnet_id>
+      <ip>ipsubnet_id</ip>
+      <mask>mask</mask>
+      <name>name</name>
+    </fields>
+    <defaults>
+      <azuresubnet_id></azuresubnet_id>
+      <block_id></block_id>
+      <ip></ip>
+      <ipconfig_id></ipconfig_id>
+      <mask></mask>
+      <name></name>
+      <org_id>Demo</org_id>
+      <status>allocated</status>
+      <type>Azure</type>
+    </defaults>
+  </ipv4subnetazurecollector>
+
+  <!-- IPv6 Subnets -->
+  <ipv6subnetazurecollector>
+    <csv_file>data/IPv6Subnet.csv</csv_file>
+    <fields>
+      <primary_key>primary_key</primary_key>
+      <ip>ipsubnet_id</ip>
+      <mask>mask</mask>
+      <name>name</name>
+    </fields>
+    <defaults>
+      <azuresubnet_id></azuresubnet_id>
+      <block_id></block_id>
+      <ip></ip>
+      <ipconfig_id></ipconfig_id>
+      <mask></mask>
+      <name></name>
+      <org_id>Demo</org_id>
+      <status>allocated</status>
+      <type>Azure</type>
+    </defaults>
+  </ipv6subnetazurecollector>
+
+  <!-- Class collection sequence -->
+  <collectors_launch_sequence type="array">
+    <!-- Warning: order is important for some classes: 1 to 3 and , the ones listed with numbers or letters; alphabetical order is ok for others -->
+    <!-- Subscriptions -->
+    <collector>
+      <name>AzureSubscriptionAzureCollector</name>
+      <enable>no</enable>
+      <rank>1</rank>
+    </collector>
+    <!-- Locations -->
+    <collector>
+      <name>AzureLocationAzureCollector</name>
+      <enable>no</enable>
+      <rank>2</rank>
+    </collector>
+    <!-- Resources group -->
+    <collector>
+      <name>AzureResourceGroupAzureCollector</name>
+      <enable>no</enable>
+      <rank>3</rank>
+    </collector>
+    <!-- SKUs -->
+    <collector>
+      <name>AzureSKUAzureCollector</name>
+      <enable>no</enable>
+      <rank>4</rank>
+    </collector>
+    <!-- App Services -->
+    <collector>
+      <name>AzureAppServiceAzureCollector</name>
+      <enable>no</enable>
+      <rank>10</rank>
+    </collector>
+    <!-- Kubernetes Services -->
+    <collector>
+      <name>AzureKubernetesServiceAzureCollector</name>
+      <enable>no</enable>
+      <rank>11</rank>
+    </collector>
+    <!-- Load Balancers -->
+    <collector>
+      <name>AzureLoadBalancerAzureCollector</name>
+      <enable>no</enable>
+      <rank>12</rank>
+    </collector>
+    <!-- Maria DB Servers -->
+    <collector>
+      <name>AzureMariaDBServerAzureCollector</name>
+      <enable>no</enable>
+      <rank>13</rank>
+    </collector>
+    <!-- Maria DBs -->
+    <collector>
+      <name>AzureMariaDBAzureCollector</name>
+      <enable>no</enable>
+      <rank>14</rank>
+    </collector>
+    <!-- MySQL DB Servers -->
+    <collector>
+      <name>AzureMySQLServerAzureCollector</name>
+      <enable>no</enable>
+      <rank>15</rank>
+    </collector>
+    <!-- MySQL DBs -->
+    <collector>
+      <name>AzureMySQLAzureCollector</name>
+      <enable>no</enable>
+      <rank>16</rank>
+    </collector>
+    <!-- MS SQL DB Servers -->
+    <collector>
+      <name>AzureMSSQLServerAzureCollector</name>
+      <enable>no</enable>
+      <rank>17</rank>
+    </collector>
+    <!-- MS SQL DBs -->
+    <collector>
+      <name>AzureMSSQLAzureCollector</name>
+      <enable>no</enable>
+      <rank>18</rank>
+    </collector>
+    <!-- PostgreSQL Servers -->
+    <collector>
+      <name>AzurePostgreServerAzureCollector</name>
+      <enable>no</enable>
+      <rank>19</rank>
+    </collector>
+    <!-- PostgreSQL DBs -->
+    <collector>
+      <name>AzurePostgreAzureCollector</name>
+      <enable>no</enable>
+      <rank>20</rank>
+    </collector>
+    <!-- Storage Accounts -->
+    <collector>
+      <name>AzureStorageAccountAzureCollector</name>
+      <enable>no</enable>
+      <rank>21</rank>
+    </collector>
+    <!-- Virtual Machines -->
+    <collector>
+      <name>AzureVirtualMachineAzureCollector</name>
+      <enable>no</enable>
+      <rank>50</rank>
+    </collector>
+    <!-- Disks -->
+    <collector>
+      <name>AzureDiskAzureCollector</name>
+      <enable>no</enable>
+      <rank>51</rank>
+    </collector>
+    <!-- Virtual Networks -->
+    <collector>
+      <name>AzureVNetAzureCollector</name>
+      <enable>yes</enable>
+      <rank>52</rank>
+    </collector>
+    <!-- Network Interfaces -->
+    <collector>
+      <name>AzureNetworkInterfaceAzureCollector</name>
+      <enable>no</enable>
+      <rank>53</rank>
+    </collector>
+    <!-- Subnets -->
+    <collector>
+      <name>AzureSubnetAzureCollector</name>
+      <enable>yes</enable>
+      <rank>54</rank>
+    </collector>
+    <!-- Public IP Addresses -->
+    <collector>
+      <name>AzurePublicIPAddressAzureCollector</name>
+      <enable>no</enable>
+      <rank>55</rank>
+    </collector>
+    <!-- Network Interface IP Configuration -->
+    <collector>
+      <name>AzureNetworkInterfaceIPConfigAzureCollector</name>
+      <enable>no</enable>
+      <rank>56</rank>
+    </collector>
+    <!-- Load Balancer Frontend IP Configuration -->
+    <collector>
+      <name>AzureLoadBalancerFrontendIPConfigAzureCollector</name>
+      <enable>no</enable>
+      <rank>57</rank>
+    </collector>
+    <!-- Virtual Network gateways -->
+    <collector>
+      <name>AzureVNetGatewayAzureCollector</name>
+      <enable>no</enable>
+      <rank>58</rank>
+    </collector>
+    <!-- Private Endpoint -->
+    <collector>
+      <name>AzurePrivateEndpointAzureCollector</name>
+      <enable>no</enable>
+      <rank>59</rank>
+    </collector>
+    <!-- IPv4 Subnets -->
+    <collector>
+      <name>IPv4SubnetAzureCollector</name>
+      <enable>yes</enable>
+      <rank>100</rank>
+    </collector>
+    <!-- IPv6 Subnets -->
+    <collector>
+      <name>IPv6SubnetAzureCollector</name>
+      <enable>no</enable>
+      <rank>101</rank>
+    </collector>
+    <!-- IPv4 Addresses -->
+    <collector>
+      <name>IPv4AddressAzureCollector</name>
+      <enable>no</enable>
+      <rank>102</rank>
+    </collector>
+    <!-- IPv6 Addresses -->
+    <collector>
+      <name>IPv6AddressAzureCollector</name>
+      <enable>no</enable>
+      <rank>103</rank>
+    </collector>
+  </collectors_launch_sequence>
+
+  <!-- Synchronization parameters -->
+  <contact_to_notify></contact_to_notify>
+  <synchro_user></synchro_user>
+  <name_prefix>Azure</name_prefix>
+  <name_postfix>Discovery</name_postfix>
+  <json_placeholders>
+    <ms_tenantid_short></ms_tenantid_short>
+    <azureappservice_synchro_name>$name_prefix$ App Services $name_postfix$</azureappservice_synchro_name>
+    <azuredisk_synchro_name>$name_prefix$ Disks $name_postfix$</azuredisk_synchro_name>
+    <azurekubernetesservice_synchro_name>$name_prefix$ Kubernetes Services $name_postfix$</azurekubernetesservice_synchro_name>
+    <azureloadbalancer_synchro_name>$name_prefix$ Load Balancers $name_postfix$</azureloadbalancer_synchro_name>
+    <azureloadbalancerfrontendipconfig_synchro_name>$name_prefix$ Load Balancer Frontend IP Configurations $name_postfix$</azureloadbalancerfrontendipconfig_synchro_name>
+    <azurelocation_synchro_name>$name_prefix$ Locations $name_postfix$</azurelocation_synchro_name>
+    <azuremariadb_synchro_name>$name_prefix$ MariaDBs $name_postfix$</azuremariadb_synchro_name>
+    <azuremariadbserver_synchro_name>$name_prefix$ MariaDB Servers $name_postfix$</azuremariadbserver_synchro_name>
+    <azuremssql_synchro_name>$name_prefix$ MS SQLs $name_postfix$</azuremssql_synchro_name>
+    <azuremssqlserver_synchro_name>$name_prefix$ MS SQL Servers $name_postfix$</azuremssqlserver_synchro_name>
+    <azuremysql_synchro_name>$name_prefix$ MySQLs $name_postfix$</azuremysql_synchro_name>
+    <azuremysqlserver_synchro_name>$name_prefix$ MySQL Servers $name_postfix$</azuremysqlserver_synchro_name>
+    <azurenetworkinterface_synchro_name>$name_prefix$ Network Interfaces $name_postfix$</azurenetworkinterface_synchro_name>
+    <azurenetworkinterfaceipconfig_synchro_name>$name_prefix$ Network Interface IP Configurations $name_postfix$</azurenetworkinterfaceipconfig_synchro_name>
+    <azurepostgre_synchro_name>$name_prefix$ PostgreSQLs $name_postfix$</azurepostgre_synchro_name>
+    <azurepostgreserver_synchro_name>$name_prefix$ PostgreSQL Servers $name_postfix$</azurepostgreserver_synchro_name>
+    <azureprivateendpoint_synchro_name>$name_prefix$ Private Endpoint $name_postfix$</azureprivateendpoint_synchro_name>
+    <azurepublicipaddress_synchro_name>$name_prefix$ Public IP Addresses $name_postfix$</azurepublicipaddress_synchro_name>
+    <azureresourcegroup_synchro_name>$name_prefix$ Resources Group $name_postfix$</azureresourcegroup_synchro_name>
+    <azuresku_synchro_name>$name_prefix$ SKU $name_postfix$</azuresku_synchro_name>
+    <azurestorageaccount_synchro_name>$name_prefix$ Storage Accounts $name_postfix$</azurestorageaccount_synchro_name>
+    <azuresubnet_synchro_name>$name_prefix$ Subnets $name_postfix$</azuresubnet_synchro_name>
+    <azuresubscription_synchro_name>$name_prefix$ Subscriptions $name_postfix$</azuresubscription_synchro_name>
+    <azurevirtualmachine_synchro_name>$name_prefix$ Virtual Machines $name_postfix$</azurevirtualmachine_synchro_name>
+    <azurevirtualmachinesize_synchro_name>$name_prefix$ Virtual Machine Sizes $name_postfix$</azurevirtualmachinesize_synchro_name>
+    <azurevnet_synchro_name>$name_prefix$ VNets $name_postfix$</azurevnet_synchro_name>
+    <azurevnetgateway_synchro_name>$name_prefix$ VNet Gateways $name_postfix$</azurevnetgateway_synchro_name>
+    <ipv4address_synchro_name>IPv4 Address Azure $name_postfix$</ipv4address_synchro_name>
+    <ipv6address_synchro_name>IPv6 Address Azure $name_postfix$</ipv6address_synchro_name>
+    <ipv4subnet_synchro_name>IPv4 Subnet Azure $name_postfix$</ipv4subnet_synchro_name>
+    <ipv6subnet_synchro_name>IPv6 Subnet Azure $name_postfix$</ipv6subnet_synchro_name>
+    <synchro_status>production</synchro_status>
+    <full_load_interval>604800</full_load_interval><!-- 7 days (in seconds): 7*24*60*60 -->
+  </json_placeholders>
+
+  <!-- Mapping tables -->
+  <subscription_status_mapping type="array">
+    <pattern>/Deleted/obsolete</pattern>
+    <pattern>/Disabled/implementation</pattern>
+    <pattern>/Enabled/production</pattern>
+    <pattern>/PastDue/obsolete</pattern>
+    <pattern>/Warned/implementation</pattern>
+  </subscription_status_mapping>
+  <disk_encryption_mapping type="array">
+    <pattern>/true/enabled</pattern>
+    <pattern>/false/disabled</pattern>
+    <pattern>/.*/disabled</pattern>
+  </disk_encryption_mapping>
+  <ipv4_subnet_mask_mapping type="array">
+    <pattern>/16/255.255.0.0</pattern>
+    <pattern>/17/255.255.128.0</pattern>
+    <pattern>/18/255.255.192.0</pattern>
+    <pattern>/19/255.255.224.0</pattern>
+    <pattern>/20/255.255.240.0</pattern>
+    <pattern>/21/255.255.248.0</pattern>
+    <pattern>/22/255.255.252.0</pattern>
+    <pattern>/23/255.255.254.0</pattern>
+    <pattern>/24/255.255.255.0</pattern>
+    <pattern>/25/255.255.255.128</pattern>
+    <pattern>/26/255.255.255.192</pattern>
+    <pattern>/27/255.255.255.224</pattern>
+    <pattern>/28/255.255.255.240</pattern>
+    <pattern>/29/255.255.255.248</pattern>
+    <pattern>/30/255.255.255.252</pattern>
+    <pattern>/31/255.255.255.254</pattern>
+    <pattern>/32/255.255.255.255</pattern>
+  </ipv4_subnet_mask_mapping>
+</parameters>

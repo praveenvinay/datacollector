@@ -1,0 +1,81 @@
+{
+  "name": "$azurelocation_synchro_name$ - $ms_tenantid_short$",
+  "description": "Discovery of Azure locations",
+  "status": "$synchro_status$",
+  "user_id": "$synchro_user$",
+  "notify_contact_id": "$contact_to_notify$",
+  "scope_class": "Location",
+  "database_table_name": "synchro_data_azurelocation_$ms_tenantid_short$",
+  "scope_restriction": "",
+  "full_load_periodicity": "$full_load_interval$",
+  "reconciliation_policy": "use_attributes",
+  "action_on_zero": "create",
+  "action_on_one": "update",
+  "action_on_multiple": "error",
+  "delete_policy": "ignore",
+  "delete_policy_update": "",
+  "delete_policy_retention": "0",
+  "attribute_list": [
+    {
+      "attcode": "address",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_unlocked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "city",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_unlocked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "code",
+      "update": "1",
+      "reconcile": "1",
+      "update_policy": "master_locked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "country",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_unlocked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "name",
+      "update": "1",
+      "reconcile": "1",
+      "update_policy": "master_locked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "org_id",
+      "update": "1",
+      "reconcile": "1",
+      "update_policy": "master_locked",
+      "reconciliation_attcode": "name",
+      "finalclass": "SynchroAttExtKey"
+    },
+    {
+      "attcode": "postal_code",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_unlocked",
+      "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "status",
+      "update": "1",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "finalclass": "SynchroAttribute"
+    }
+  ],
+  "user_delete_policy": "administrators",
+  "url_icon": "",
+  "url_application": "",
+  "notify_contact_id_obsolescence_flag": ""
+}
